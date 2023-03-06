@@ -1,0 +1,57 @@
+.services-section {
+    text-align: center;
+}
+.services-section .row-card {
+    border-radius: 15px;
+    padding-top: 55px;
+    padding-bottom: 51px;    
+    &__img {
+        height: 110px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__title {
+        @include text($ff, 24px, 28px, 600, $color-text);
+        padding-top: 42px;
+        padding-bottom: 17px;
+    }
+    &__desc {
+        @include text($ff, 16px, 19px, 400, $color-cards-text);
+        max-width: 318px;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+    &__btn {        
+        a {
+            @include text ($ff, 16px, 19px, 600, $color-primary);
+            text-decoration: underline;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        &:active {
+            animation: scale-down-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both normal;
+            @keyframes scale-down-center {
+                0% {
+                  -webkit-transform: scale(1);
+                          transform: scale(1);
+                }
+                100% {
+                  -webkit-transform: scale(0.93);
+                          transform: scale(0.93);
+                }
+              }
+        }
+    }
+    &:hover {
+        .row-card__title, .row-card__desc, a {
+            color: $color-white;
+        } 
+        svg path {
+            fill: $color-white;
+        }
+    }
+}
+

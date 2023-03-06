@@ -1,0 +1,63 @@
+.header {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; 
+    &__logo {
+        @include text ($ff, 24px, 28px, 600, $color-text);
+    }    
+    &__ul {
+        display: flex;
+        gap: 24px;
+    }
+    &__a {
+        @include text ($ff, 16px, 19px, 400, $color-black);
+        position: relative;
+        transition: $transition;
+        &::before {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -3px;
+            background: $color-primary;
+            transition: $transition;
+        }
+        &:hover {
+            color: $color-primary;
+        }
+        &._active {
+            color: $color-primary;
+            font-weight: 600;
+            &::before {
+                width: calc(100% - 10px);
+            }
+        }       
+    }
+    &__search {
+        position: relative;
+        input {
+            background: $color-black;
+            border-radius: 50px;
+            border: 0;
+            padding: 13px 18px;
+            outline: none;
+            color: $color-white;
+            padding-right: 35px;
+            &::placeholder {
+                @include text ($ff, 14px, 16px, 400, $color-white);
+            }
+        }
+        img {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
