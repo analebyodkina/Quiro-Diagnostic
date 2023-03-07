@@ -27,6 +27,7 @@
     line-height: 0;
     height: 0; }
   .owl-carousel .owl-stage-outer {
+    max-height: 570px;
     border-radius: 30px;
     position: relative;
     overflow: hidden;

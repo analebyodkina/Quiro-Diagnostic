@@ -6,13 +6,26 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 131px;
+    @include tablet-small-768 {
+        margin-bottom: 50px;        
+    }
     &__title {
         @include text($ff, 36px, 42px, 700, $color-white);
         margin-bottom: 47px;
+        text-align: center;
+        @include mobile-576 {
+            font-size: 25px;
+            line-height: 35px;
+        }        
     }
     &__form {
         position: relative;
-        max-width: 717px;  
+        max-width: 717px; 
+        @include mobile-576 {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        } 
         input {
             display: block;            
             width: 717px;
@@ -20,21 +33,30 @@
             outline: 0;
             background: #F9F1FE;
             border-radius: 50px;
-            padding: 18px 31px;
+            padding: 20.5px 31px;
+            &::placeholder {
+                @include text($ff, 16px, 19px, 400, $color-grey);
+            }
+            @include tablet-992 {
+                width: 600px;
+            }
+            @include tablet-small-768 {
+                width: 500px;
+            }
+            @include mobile-576 {
+                width: 280px;
+            }
         }
         button {
             position: absolute;
-            top: .4em;
+            top: 8px;
             right: .4em;
             background: $color-primary;
             border: 0;
             outline: 0;
             border-radius: 50px;
-            padding: 10px 49px;
-            cursor: pointer;
-            a {
-                @include text($ff, 20px, 23px, 600, $color-cards)
-            } 
+            padding: 10px 49px; 
+            cursor: pointer; 
             &:active {
                 animation: scale-down-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both normal;
                 @keyframes scale-down-center {
@@ -48,7 +70,13 @@
                     }
                   }
             }
-        }              
+            @include mobile-576 {
+                position: static;
+            }
+        } 
+    }
+    &__btn {
+        @include text($ff, 20px, 23px, 600, $color-cards)
     }
 }
 

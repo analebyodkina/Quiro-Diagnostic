@@ -1,0 +1,97 @@
+.footer {
+    background: $color-cards;
+    padding: 106px 0 81px 0;
+    @include tablet-small-768{
+        padding: 40px 0 25px 0;        
+    }       
+    &__container {
+        display: flex;
+        justify-content: space-between; 
+        @include tablet-small-768{
+            flex-direction: column;            
+            align-items: center;
+            text-align: center;
+        }       
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        max-width: 431px;
+    }
+    &__title {
+        a {
+            @include text($ff, 24px, 28px, 600, $color-text);
+        }
+        margin-bottom: 26px;
+    }
+    &__desc {
+        @include text($ff, 16px, 19px, 400, $color-text);
+        @include tablet-small-768{
+            display: none;
+        } 
+    }
+    &__contact {
+        @include tablet-small-768{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 400px;
+        } 
+    }    
+}
+.contact {
+    transition: $transition;
+    &__title {
+        @include text($ff, 20px, 23px, 600, $color-text);
+        margin-bottom: 9px;
+    }
+    &__desc {
+        @include text($ff, 16px, 19px, 400, $color-text);
+        margin-bottom: 37px;
+        &:last-child {
+            margin-bottom: 0;
+            @include tablet-small-768{
+                margin-bottom: 15px;            
+            } 
+        }
+        @include tablet-small-768{
+            margin-bottom: 15px;            
+        } 
+    }
+    span {
+        padding-left: 16px;
+    }
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 1px 3px 30px $color-grey;
+        padding: 0 5px;
+    }
+}
+.hours {
+    @include tablet-small-768{
+        display: flex;
+        gap: 10px;
+    } 
+    &__title {
+        @include text($ff, 20px, 23px, 600, $color-text);
+        margin-bottom: 17px;
+    }
+    &__li {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @include tablet-small-768{
+            display: none;
+        } 
+    } 
+    &__li._primary {
+        display: none;
+        @include tablet-small-768{
+            display: inline-block;
+        } 
+    } 
+    
+}
