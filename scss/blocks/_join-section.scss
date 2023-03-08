@@ -1,13 +1,21 @@
 .join-section {
     background: #1C1B1F;
     border-radius: 10px;
-    padding: 80px 0;
+    padding: 80px 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 131px;
+    @include tablet-992{
+        padding: 80px 150px;             
+    }
     @include tablet-small-768 {
-        margin-bottom: 50px;        
+        margin-bottom: 50px; 
+        padding: 40px 150px 120px 150px;                     
+    }
+    @include mobile-576 {
+        margin-bottom: 50px; 
+        padding: 40px 50px 120px 50px;                     
     }
     &__title {
         @include text($ff, 36px, 42px, 700, $color-white);
@@ -19,38 +27,31 @@
         }        
     }
     &__form {
-        position: relative;
-        max-width: 717px; 
+        width: 100%;
+        background: #F9F1FE;
+        border-radius: 50px; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px 10px 0;
+        @include tablet-small-768 {
+            position: relative;
+        }
         @include mobile-576 {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        } 
-        input {
-            display: block;            
-            width: 717px;
+            width: auto;
+        }  
+        input {  
+            width: 100%;                     
             border: 0;
             outline: 0;
-            background: #F9F1FE;
             border-radius: 50px;
-            padding: 20.5px 31px;
+            background: $color-cards;
+            padding: 0 20px 0 30px;
             &::placeholder {
                 @include text($ff, 16px, 19px, 400, $color-grey);
-            }
-            @include tablet-992 {
-                width: 600px;
-            }
-            @include tablet-small-768 {
-                width: 500px;
-            }
-            @include mobile-576 {
-                width: 280px;
-            }
+            }            
         }
-        button {
-            position: absolute;
-            top: 8px;
-            right: .4em;
+        button { 
             background: $color-primary;
             border: 0;
             outline: 0;
@@ -70,9 +71,12 @@
                     }
                   }
             }
-            @include mobile-576 {
-                position: static;
-            }
+            @include tablet-small-768 {
+               position: absolute;
+               top: 60px;
+               left: 50%;
+               transform: translateX(-50%);
+            }             
         } 
     }
     &__btn {

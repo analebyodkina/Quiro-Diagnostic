@@ -68,10 +68,7 @@ ul {
     align-items: center;
     background: $color-cards;
     padding: 0 10px;
-    transition: $transition;
     &:hover {
         background: $color-primary; 
     }
-    
-
 }
